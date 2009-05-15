@@ -1,0 +1,15 @@
+<% form_for :comment, :url => post_comments_path(@post) do |form| %>
+
+<p>
+	<label for="comment_name"> Your name (15 characters max): </label>
+	<%= form.text_field :name %>
+</p>
+
+<p>
+	<label for="comment_body"> Your comment: </label> <br />
+	<%= form.text_area :body %>
+</p>
+
+<p><%= submit_tag "Add comment" %></p>
+
+<% end %>

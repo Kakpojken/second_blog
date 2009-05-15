@@ -1,0 +1,35 @@
+<div id="wrapper">
+	
+	<%= link_to image_tag('logout_no.png', :alt => "Go back") , posts_path %> 
+	
+	<div class="main">
+		<p>
+			<b>Topic:</b>
+			<%=h @post.topic %>
+		</p>
+		<div id="thin_line"> </div>
+		<p>
+			<b>Post:</b>
+			<%=h @post.post %>
+		</p>
+		<div class="thin_line"> </div>
+		<p>
+			<b>Author:</b>
+			<%=h @post.author %>, <%=h @post.created_at %>
+		</p>
+	</div>
+
+	<div id="comments">
+	<% if @post.has_comments? %>
+	<h4>Comments:</h4>
+	<%= render  :partial => "comments/comment",
+	:collection => @post.comments %>
+	<% end %>
+</div>
+
+<div id="comment_form">
+	<h4>Add comment:</h4>
+	<%= render :partial => "comments/form" %>
+</div>
+
+</div>

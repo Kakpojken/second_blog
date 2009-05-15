@@ -1,0 +1,192 @@
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-05-04 13:07:25) [POST]
+  Parameters: {"post"=>{}}
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 79ms (View: 64, DB: 20) | 200 OK [http://test.host/posts?]
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;35;1mPost Load (1.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-05-04 13:07:25) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mPost Destroy (1.0ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 1[0m
+Redirected to http://test.host/posts
+Completed in 8ms (DB: 5) | 302 Found [http://test.host/posts/1]
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;35;1mPost Load (1.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#edit (for 0.0.0.0 at 2009-05-04 13:07:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 14ms (View: 11, DB: 4) | 200 OK [http://test.host/posts/1/edit]
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-05-04 13:07:25) [GET]
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;36;1mPost Load (2.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 148ms (View: 139, DB: 4) | 200 OK [http://test.host/]
+
+
+Processing PostsController#new (for 0.0.0.0 at 2009-05-04 13:07:25) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://test.host/posts/new]
+  [4;35;1mPost Load (1.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-05-04 13:07:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (1.9ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;35;1mComment Load (1.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (2.2ms)
+Rendered comments/_comment (2.3ms)
+Rendered comments/_form (5.1ms)
+Completed in 40ms (View: 33, DB: 4) | 200 OK [http://test.host/posts/1]
+  [4;36;1mPost Load (0.9ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-05-04 13:07:25) [PUT]
+  Parameters: {"post"=>{}, "id"=>"1"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Redirected to http://test.host/posts/1
+Completed in 13ms (DB: 2) | 302 Found [http://test.host/posts/1?]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-05-04 13:27:19) [POST]
+  Parameters: {"post"=>{"post"=>"Sverige1"}}
+  [4;35;1mPost Create (1.0ms)[0m   [0mINSERT INTO "posts" ("updated_at", "topic", "post", "author", "created_at") VALUES('2009-05-04 11:27:19', NULL, 'Sverige1', NULL, '2009-05-04 11:27:19')[0m
+Redirected to http://test.host/posts/3
+Completed in 17ms (DB: 6) | 302 Found [http://test.host/posts?post%5Bpost%5D=Sverige1]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-05-04 13:27:19) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mPost Destroy (0.9ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 1[0m
+Redirected to http://test.host/posts
+Completed in 6ms (DB: 4) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;36;1mPost Load (6.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#edit (for 0.0.0.0 at 2009-05-04 13:27:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.9ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 29ms (View: 25, DB: 9) | 200 OK [http://test.host/posts/1/edit]
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-05-04 13:27:19) [GET]
+  [4;36;1mPost Load (2.9ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 195ms (View: 185, DB: 5) | 200 OK [http://test.host/]
+
+
+Processing PostsController#new (for 0.0.0.0 at 2009-05-04 13:27:19) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://test.host/posts/new]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-05-04 13:27:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (5.4ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_form (6.9ms)
+Completed in 61ms (View: 57, DB: 3) | 200 OK [http://test.host/posts/1]
+  [4;35;1mPost Load (0.9ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-05-04 13:27:19) [PUT]
+  Parameters: {"post"=>{}, "id"=>"1"}
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Redirected to http://test.host/posts/1
+Completed in 6ms (DB: 2) | 302 Found [http://test.host/posts/1?]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+
+
+Processing PostsController#create (for 0.0.0.0 at 2009-05-05 14:01:37) [POST]
+  Parameters: {"post"=>{"post"=>"Sverige1"}}
+  [4;35;1mPost Create (1.0ms)[0m   [0mINSERT INTO "posts" ("updated_at", "topic", "post", "author", "created_at") VALUES('2009-05-05 12:01:37', NULL, 'Sverige1', NULL, '2009-05-05 12:01:37')[0m
+Redirected to http://test.host/posts/3
+Completed in 21ms (DB: 6) | 302 Found [http://test.host/posts?post%5Bpost%5D=Sverige1]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#destroy (for 0.0.0.0 at 2009-05-05 14:01:37) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mPost Destroy (0.8ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 1[0m
+Redirected to http://test.host/posts
+Completed in 6ms (DB: 4) | 302 Found [http://test.host/posts/1]
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#edit (for 0.0.0.0 at 2009-05-05 14:01:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (1.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/edit
+Completed in 28ms (View: 25, DB: 3) | 200 OK [http://test.host/posts/1/edit]
+
+
+Processing PostsController#index (for 0.0.0.0 at 2009-05-05 14:01:37) [GET]
+  [4;36;1mPost Load (2.2ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 68ms (View: 59, DB: 4) | 200 OK [http://test.host/]
+
+
+Processing PostsController#new (for 0.0.0.0 at 2009-05-05 14:01:37) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://test.host/posts/new]
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#show (for 0.0.0.0 at 2009-05-05 14:01:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (1.9ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_form (3.2ms)
+Completed in 27ms (View: 23, DB: 3) | 200 OK [http://test.host/posts/1]
+  [4;35;1mPost Load (0.9ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+
+
+Processing PostsController#update (for 0.0.0.0 at 2009-05-05 14:01:37) [PUT]
+  Parameters: {"post"=>{}, "id"=>"1"}
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Redirected to http://test.host/posts/1
+Completed in 7ms (DB: 2) | 302 Found [http://test.host/posts/1?]

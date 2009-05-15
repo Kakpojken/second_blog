@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Word&copy;ore Blog</title>
+  <link href="/stylesheets/scaffold.css?1242224442" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/application.css?1242301484" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="inserter">
+<%form_tag login_path do%>
+	<p> Username: <%= text_field "user", "username" %> </p>
+	<p> Password: <%= password_field "user", "password" %> </p>
+	<p> <%= submit_tag 'Log in' %> </p>
+<% end %>
+<span id="link_back"> 
+	<%= link_to image_tag('logout_no.png', :alt => "Go back") , posts_path %> 
+</span>
+</div>
+
+</body>
+</html>

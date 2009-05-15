@@ -1,0 +1,152 @@
+body {
+  background-image:url('/images/green-apple.gif');
+}
+
+img {
+  border:0;
+}
+
+#wrapper {
+  width:960px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:10px;
+}
+
+#container {
+  width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.title {
+  float:left;
+  text-align:center;
+  border:3px double #000;
+  height:375px;
+  width:325px;
+  background-color:#FFF;
+  padding:5px;
+}
+  
+  .title_logo {
+    height:22px;
+    width:22px;
+  }
+
+#manager {
+  float:left;
+  border:3px double #000;
+  margin-left:10px;
+  height:375px;
+  width:295px;
+  background-color:#FFF;
+  line-height:0px;
+  padding:5px;
+}
+
+  .center {
+    text-align:center;
+  }
+  
+  .switchholder {
+    margin-top:9px;
+  }
+
+.main {
+  float:left;
+  border:3px double #000;
+  margin-top:10px;
+  width:645px;
+  background-color:#FFF;
+  padding:5px;
+}
+
+  .approval {
+    float:right;
+    margin:5px;
+    height:18px;
+    width:18px;
+  }
+  
+  #vote {
+    margin-top:2px;
+    height:18px;
+    width:18px;
+  }
+  
+  .comment_span {
+    float:right;
+    margin:5px;
+  }
+  
+  .status_span {
+    /* Empty for now */
+  }
+
+#inserter {
+  text-align:center;
+  border:3px double #000;
+  width:450px;
+  background-color:#FFF;
+}
+
+#comments {
+  float:left;
+  border:3px double #000;
+  margin-top:5px;
+  width:312px;
+  background-color:#FFF;
+  padding:5px;
+}
+
+  /* Under-dog element of #comments */
+  #messagebox {
+    text-align:center;
+    border:2px double #AAA;
+    margin:10px;
+    background-color:#FFF;
+  }
+  
+#sidebar {
+  float:right;
+  text-align:center;
+  background-color:#FFF;
+  border:2px double #000;
+}
+  
+  .small_messagebox {
+    text-align:center;
+    border:2px double #AAA;
+    margin:10px;
+    width:255px;
+    background-color:#FFF;
+    font-size:14px;
+  }
+
+#comment_form {
+  float:left;
+  text-align:center;
+  border:3px double #000;
+  margin:5px;
+  width:322px;
+  background-color:#FFF;
+}
+
+  #comment_body {
+    height:200px;
+    width:300px;
+  }
+
+.thin_line {
+  border-bottom:1px double #000;
+  margin-top:4px;
+}
+
+#link_back {
+  background-color:#FFF;
+  float:right;
+  margin-top:10px;
+  height:47px;
+  width:50px;
+}

@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20090429091745
+#
+# Table name: users
+#
+#  id         :integer(4)      not null, primary key
+#  username   :string(255)
+#  password   :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: MyString
+  password: MyString
+
+two:
+  username: MyString
+  password: MyString

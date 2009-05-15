@@ -1,0 +1,69 @@
+<div id="wrapper">
+
+	<div class="title">
+		<h1>Word&copy;ore Blog</h1>
+		<%= link_to image_tag('keys.gif', :alt => "Log in", :class => "title_logo"), 
+													session_path unless logged_in? %>
+		<%= link_to image_tag('edit.gif', :alt => "New post", :class => "title_logo"), 
+													new_post_path if logged_in? %>
+		<%= link_to image_tag('crossout.gif', :alt => "Log out", :class => "title_logo"), 
+													logout_path if logged_in? %>
+		<div class="thin_line"> </div>
+		<h3> Statistics </h3>
+		<ul>	
+			<li> Total number of active posts: <%= Post.count %> </li>
+			<li> Total number of comments made: <%= Comment.count %> </li>
+			<li> Total number of "likes": <%= Vote.count %> </li>
+		</ul>
+		<div class="thin_line"> </div>
+	</div>
+
+	<div id="manager">
+		<h3 class="center"> - Topics - </h3>
+		<div class="thin_line"> </div>
+		<% @links.each do |post| %>
+		<p> <%= link_to post.topic, post %> </p>
+		<ul>	
+			<li> <%= post.created_at %> </li>
+		</ul>
+		<div class="thin_line"> </div>
+		<% end %>
+			<div class="switchholder"> <%= will_paginate @posts %> </div>
+	</div>
+	
+	<div id="sidebar">
+		<h3> 3 latest comments </h3>
+		<% @comments.each do |comment| %>
+		<div class="small_messagebox">
+			<p> <%=h comment.body %> </p>
+			<%= link_to 'Read the associated post', comment.post %>
+			<div class="thin_line"> </div>
+			<p> <strong> Posted by: </strong> <%=h comment.name %> </p>
+			<div class="thin_line"> </div>
+			<p> <strong> At: </strong> <%=h comment.created_at %> </p>
+		</div>
+		<% end %>
+	</div>
+
+	<% @posts.each do |post| %>
+	<div class="main">
+			<strong> Topic: </strong> <em> <%=h post.topic %> </em> -
+			<span class="status_span"> <strong> Mood: </strong> <%=h post.status %> </span>
+		<div class="thin_line"> </div>
+			<strong> Post: </strong> <%=h post.post %>
+		<div class="thin_line"> </div>
+			<%= pluralize post.votes.count, 'person' %> like this. Do you?
+			<%= button_to 'I like this', post_votes_path(post) %>
+		<div class="thin_line"> </div>
+			<strong> Author: </strong> <%=h post.author %>, <%=h post.created_at %>
+		
+		<span class="comment_span"> <%= pluralize post.comments.count, 'comment' %> </span>
+		<%= link_to image_tag('comment.gif', :alt => 'Comment post', :class => 'approval'), post %>
+		<%= link_to image_tag('crossout.gif', :alt => "Delete post", 
+		:class => 'approval'), post, :method => :delete if logged_in? %>
+		<%= link_to image_tag('edit.gif', :alt => "Edit post", 
+		:class => 'approval'), edit_post_path(post) if logged_in? %>
+		
+	</div>
+	<% end %>
+</div>
