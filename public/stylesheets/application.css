@@ -26,6 +26,7 @@ img {
   height:375px;
   width:325px;
   background-color:#FFF;
+  font-size:14px;
   padding:5px;
 }
   
@@ -41,6 +42,7 @@ img {
   height:375px;
   width:295px;
   background-color:#FFF;
+  font-size:14px;
   line-height:0px;
   padding:5px;
 }
@@ -59,6 +61,7 @@ img {
   margin-top:10px;
   width:645px;
   background-color:#FFF;
+  font-size:14px;
   padding:5px;
 }
 
@@ -97,11 +100,12 @@ img {
   margin-top:5px;
   width:312px;
   background-color:#FFF;
+  font-size:14px;
   padding:5px;
 }
 
   /* Under-dog element of #comments */
-  #messagebox {
+  .messagebox {
     text-align:center;
     border:2px double #AAA;
     margin:10px;
@@ -112,8 +116,16 @@ img {
   float:right;
   text-align:center;
   background-color:#FFF;
-  border:2px double #000;
+  border:3px double #000;
+  line-height:14px;
 }
+
+  .pic_right {
+    float:right;
+    margin:5px;
+    height:18px;
+    width:18px;
+  }
   
   .small_messagebox {
     text-align:center;
@@ -131,6 +143,7 @@ img {
   margin:5px;
   width:322px;
   background-color:#FFF;
+  font-size:14px;
 }
 
   #comment_body {
@@ -143,8 +156,11 @@ img {
   margin-top:4px;
 }
 
+.red_text {
+  color:#C00;
+}
+
 #link_back {
-  background-color:#FFF;
   float:right;
   margin-top:10px;
   height:47px;

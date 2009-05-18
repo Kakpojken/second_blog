@@ -1,7 +1,7 @@
 <div id="wrapper">
 
 	<div class="title">
-		<h1>Word&copy;ore Blog</h1>
+		<h1>Word<span class="red_text"><%= link_to '&copy;', posts_path %></span>ore Blog</h1>
 		<%= link_to image_tag('keys.gif', :alt => "Log in", :class => "title_logo"), 
 													session_path unless logged_in? %>
 		<%= link_to image_tag('edit.gif', :alt => "New post", :class => "title_logo"), 
@@ -12,31 +12,34 @@
 		<h3> Statistics </h3>
 		<ul>	
 			<li> Total number of active posts: <%= Post.count %> </li>
-			<li> Total number of comments made: <%= Comment.count %> </li>
+			<li> Total number of comments: <%= Comment.count %> </li>
 			<li> Total number of "likes": <%= Vote.count %> </li>
 		</ul>
+		<p> <strong> <em> (Remember, comments and therefor the total are not deleted,
+			 for security reasons) </em> </strong> </p>
 		<div class="thin_line"> </div>
 	</div>
 
 	<div id="manager">
 		<h3 class="center"> - Topics - </h3>
-		<div class="thin_line"> </div>
-		<% @links.each do |post| %>
+		<% @posts.each do |post| %>
+		<div class="small_messagebox">
 		<p> <%= link_to post.topic, post %> </p>
 		<ul>	
 			<li> <%= post.created_at %> </li>
 		</ul>
-		<div class="thin_line"> </div>
+		</div>
 		<% end %>
 			<div class="switchholder"> <%= will_paginate @posts %> </div>
 	</div>
 	
 	<div id="sidebar">
 		<h3> 3 latest comments </h3>
+		<em> And their <span class="red_text"> associated </span> posts. </em>
 		<% @comments.each do |comment| %>
 		<div class="small_messagebox">
 			<p> <%=h comment.body %> </p>
-			<%= link_to 'Read the associated post', comment.post %>
+			<%= link_to 'Read post', comment.post %>
 			<div class="thin_line"> </div>
 			<p> <strong> Posted by: </strong> <%=h comment.name %> </p>
 			<div class="thin_line"> </div>
@@ -63,7 +66,7 @@
 		:class => 'approval'), post, :method => :delete if logged_in? %>
 		<%= link_to image_tag('edit.gif', :alt => "Edit post", 
 		:class => 'approval'), edit_post_path(post) if logged_in? %>
-		
+	
 	</div>
 	<% end %>
 </div>

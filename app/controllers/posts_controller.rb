@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   # GET /posts.xml
   def index
     @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'
-    @links = Post.paginate :page => params[:page], :order => 'created_at DESC'
     @comments = Comment.find :all, :limit => "3", :order => 'created_at DESC'
 
     respond_to do |format|
@@ -79,8 +78,8 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
+    @post = Post.find(params[:id])  # && Comment.find(params[:post_id])
+    @post.destroy  
 
     respond_to do |format|
       format.html { redirect_to(posts_url) }

@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
       session[:id] = user.id
       redirect_to posts_url
     else
+      redirect_to session_url(:username => params[:user][:username])
       flash[:error] = 'Failed to log in'
-      redirect_to new_session_url(:username => params[:user][:username])
     end
   end
   

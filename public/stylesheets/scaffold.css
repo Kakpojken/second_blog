@@ -1,6 +1,13 @@
-a { color: #8C7; }
-a:visited { color: #88D; }
+a { color: #7B6; }
+a:visited { color: #C00; }
 a:hover { color: #000;}
+
+.red_text a:link { text-decoration: none;}
+.red_text a:visited { text-decoration: none;}
+
+.title img, .main img { border-bottom: 1px solid #FFF; }
+ 
+.title img:hover, .main img:hover { border-bottom: 1px solid #000; }
 
 .fieldWithErrors {
   padding: 2px;
